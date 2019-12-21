@@ -1,0 +1,26 @@
+Harrison Kerr
+
+Description:
+  This allocator is a shim that replaces the standard malloc, calloc, realloc,
+    and free functions with implementations that function according to the
+    specification of the originals.
+
+KNOWN PROBLEMS
+  The allocator only works for values up to 4 Gigabytes. Behavior when the size
+  parameter of malloc, realloc, and calloc is greater than 4 gigabytes is
+  undefined.
+  - Because this allocator will not be dealing with values any larger
+    than 4GB, this saves a little bit of space in the header of each page.
+
+DESIGN
+  In working on this project, I put most of my effort into making my new
+  malloc and free functions. After testing and debugging these sufficiently,
+  using them to make my realloc and calloc functions was a simple task.
+
+Resources:
+  Operating Systems class lectures
+  Operating Systems class git repository,
+  man pages,
+  Piazza,
+  Jacob Sorber @ YouTube,
+  Stack Overflow
